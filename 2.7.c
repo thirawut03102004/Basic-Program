@@ -6,9 +6,12 @@ int main() {
     int countFizz = 0;
     int countBuzz = 0;
     int countOther = 0;
+
     if (scanf("%d", &N) != 1) {
+        printf("Error\n");
         return 1;
     }
+
     for (i = 1; i <= N; i++) {
         if (i % 15 == 0) {
             countFizzBuzz++;
@@ -23,6 +26,7 @@ int main() {
             countOther++;
         }
     }
+
     printf("Count FizzBuzz (by 15): %d\n", countFizzBuzz);
     printf("Count Fizz (by 3 only): %d\n", countFizz);
     printf("Count Buzz (by 5 only): %d\n", countBuzz);
