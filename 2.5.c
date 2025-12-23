@@ -8,15 +8,15 @@ int main() {
     }
     while (score != -1) {
         if (score >= 80) {
-            countA++;
+            countA += 1;
         } else if (score >= 70) {
-            countB++;
+            countB += 1;
         } else if (score >= 60) {
-            countC++;
+            countC += 1;
         } else if (score >= 50) {
-            countD++;
+            countD += 1;
         } else {
-            countF++;
+            countF += 1;
         }
         if (scanf("%d", &score) != 1) {
             break;
