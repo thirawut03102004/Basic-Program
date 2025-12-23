@@ -1,7 +1,21 @@
 #include <stdio.h>
 
-int main()
-{
+void process(char c, int *u, int *l, int *d, int *s) {
+    if (c >= 'A' && c <= 'Z') {
+        *u = *u + 1;
+    } 
+    else if (c >= 'a' && c <= 'z') {
+        *l = *l + 1;
+    } 
+    else if (c >= '0' && c <= '9') {
+        *d = *d + 1;
+    } 
+    else {
+        *s = *s + 1;
+    }
+}
+
+int main() {
     char text[101];
     int countUpper = 0;
     int countLower = 0;
@@ -9,29 +23,12 @@ int main()
     int countOther = 0;
     int i;
 
-    if (scanf("%s", text) != 1)
-    {
+    if (scanf("%100s", text) != 1) {
         return 1;
     }
 
-    for (i = 0; text[i] != '\0'; i++)
-    {
-        if (text[i] >= 'A' && text[i] <= 'Z')
-        {
-            countUpper++;
-        }
-        else if (text[i] >= 'a' && text[i] <= 'z')
-        {
-            countLower++;
-        }
-        else if (text[i] >= '0' && text[i] <= '9')
-        {
-            countDigit++;
-        }
-        else
-        {
-            countOther++;
-        }
+    for (i = 0; text[i] != '\0'; i++) {
+        process(text[i], &countUpper, &countLower, &countDigit, &countOther);
     }
 
     printf("Uppercase: %d\n", countUpper);
